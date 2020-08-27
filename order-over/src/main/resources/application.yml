@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_boot_source?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#mybatis
+mybatis:
+  #注意：一定要对应mapper映射xml文件的所在路径
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  configuration:
+    lazy-load-trigger-methods:
+    lazy-loading-enabled: true
+    aggressive-lazy-loading: false
