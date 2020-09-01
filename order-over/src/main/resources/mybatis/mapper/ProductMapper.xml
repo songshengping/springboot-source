@@ -137,4 +137,13 @@
       update_user = #{updateUser,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <update id="updateProductCount">
+    update product
+    set count = count - #{buyCount,jdbcType=INTEGER},
+    update_time = #{updateTime,jdbcType=TIME},
+      update_user = #{updateUser,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+    and count > 0
+  </update>
 </mapper>

@@ -23,10 +23,10 @@ public class OrderOverApplicationTests {
 
     @Test
     public void contextLoads() throws InterruptedException {
-        CountDownLatch cdl = new CountDownLatch(5);
-        CyclicBarrier cyclicBarrier = new CyclicBarrier(5);
-        ExecutorService executorService = Executors.newFixedThreadPool(5);
-        for (int i = 0; i < 5; i++) {
+        CountDownLatch cdl = new CountDownLatch(50);
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(50);
+        ExecutorService executorService = Executors.newFixedThreadPool(50);
+        for (int i = 0; i < 50; i++) {
             executorService.submit(()->{
                 try {
                     cyclicBarrier.await();// 所有线程,在此等待 等5个线程
